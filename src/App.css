@@ -1,0 +1,300 @@
+*{
+  max-width: 100%;
+}
+
+
+.addCart{
+  background-color: #341948;
+  color: white;
+  padding: 10px;
+  width: auto ;
+  display:block ;
+  margin: 10px auto;
+  border: #341948;
+  border-radius: 5px ;
+}
+.addCart:hover{
+transition: 1s;
+scale: 1.1;
+}
+.ContactoHead{
+  background-image: url("../src/assets/images/fondoM.webp") ;
+  background-size: cover;
+  
+}
+.contactoTitulo{
+ font-size: 50px;
+  padding: 70px;
+  text-align: center;
+  color: white;
+}
+.contactoParrafo{
+  text-align: center;
+  color: white;
+  font-weight: 600;
+  padding-bottom: 30px;
+  font-size: 20px;
+}
+.ContactoHead:hover{
+ scale: 1.1;
+ transition: 5s;
+}
+.contactoContainer{
+  padding: 50px;
+  display: grid;
+  padding-top: 100px;
+  padding-bottom: 150px;
+  background-color: #dddbdf;
+  grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas: 
+    "form form redes"
+    "form form redes";
+}
+.contactoForm{
+  grid-area: form;
+}
+.redIcon{
+  display: inline-block;
+  margin: 5px;
+}
+.contactoDatos{
+  grid-area: redes;
+  font-size: 30px;
+  text-align: center;
+  padding: 20px;
+  background: #341948;
+  border-radius: 5px;
+  color: white;
+}
+.navbar-brand{
+  font-weight: 500;
+  font-family: monospace;
+  font-size: 30px;
+}
+.navbar-sticky{
+  display: flex;
+  justify-content: space-between;
+  position: sticky !important;
+  align-items: center;
+  z-index: 999;
+  opacity: 0.90;
+  top: 0;
+}
+.Preguntas{
+  background-image: url('../src/assets/images/contacto.webp') ;
+  padding:200px 0;
+
+}
+.PreguntasFre{
+  margin-top: 80px ;
+  padding: 30px auto;
+  background-color: white;
+  opacity: 0.90;
+}
+.medidas {
+  padding: 200px 0;
+  background-image: url('../src/assets/images/CollarSlider1.webp');
+}
+.medidasAnillos{
+  background-color: black;
+  opacity: 0.70;
+  padding: 50px 0;
+  text-align: center;
+  color: white;
+  font-size: 20px;
+}
+.table-danger{
+  color: white;
+  margin: 50px;
+  padding: 20px;
+}
+tr{
+  padding: 20px;
+}
+td{
+  padding: 20px;
+}
+.logoP {
+  width: 100px;
+  cursor: pointer;
+}
+.productosIndex{
+  margin: 50px auto;
+
+  text-align: center;
+}
+.productosContainer{
+  background-color: #dddbdf;
+  margin-bottom: 50px;
+}
+h2{
+color: #dddbdf;
+padding: 0 20px;
+}
+footer{
+  background-color: #170B3B;
+  color: aliceblue;
+  text-align: center;
+  font-size: 30px;
+  padding: 25px;
+  margin-top: 100px;
+  height: 100px;
+  
+}
+.nav-item:hover{ 
+
+  font-weight: 600;
+  text-transform: uppercase;
+cursor: pointer;
+}
+.containerSaludo{
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+}
+.saludo{
+  text-align: center;
+  font-weight: 500;
+  font-size: larger;
+  position:relative;
+  animation: mover 20s linear infinite;
+}
+@keyframes mover {
+  from {
+    left: -100%;
+  }
+  to {
+    left: 100%;
+  }
+}
+
+.productos{
+
+  padding-top: 50px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto;
+    gap: 30px;
+    row-gap: 50px;
+  }
+  .card{
+   font-family: monospace;
+   font-weight: 600;
+   display: flex;
+   color: black;
+   align-items: center;
+  }
+  .cantidadCard{
+    position: relative;
+    bottom: 50px;
+    left: 90px;
+    font-size: 1.5rem;
+    background-color: rgb(62, 202, 179);
+    padding: 20px;
+    border-radius: 35px;
+}
+.spinnerLogo {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+}
+.spinner {
+  border: 5px solid #341948;
+  border-radius: 50%;
+  
+  width: 100px;
+  height: 100px;
+  animation: spin 10s linear infinite;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+.cargando {
+  display: block;
+  font-family: monospace;
+  font-size: 25px;
+  text-align: center;
+}
+.itemDetail {
+  margin: 50px auto;
+    padding: 40px;
+    display: grid;
+    text-align: center;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: 
+    "img precio"
+    "img botones"
+    "descripcion descripcion";
+    
+
+}
+.imgDetail{
+  grid-area: img;
+        border: 2px solid rgb(176, 172, 172);
+        margin: 30px;
+        border-radius:15px ;
+
+}
+.imgDetail:hover {
+  transform: scale(1.1);
+  transition: 1s;
+}
+.detalle{
+  grid-area: precio;
+
+}
+.stock {
+  text-align: center;
+    display: flex;
+    justify-content: center;
+
+}
+.sumaResta{
+  border-radius: 3px;
+  border: #dddbdf;
+  background-color: #b9e4d6;
+  font-size: 15px;
+  padding: 7px;
+}
+.cantidad{
+  font-size: 17px;
+  margin: 10px;
+    
+  }
+  .stockNum{
+    color: rgb(116, 114, 114);
+  }
+.descripcion{
+  grid-area: descripcion;
+  border: 2px solid rgb(176, 172, 172);
+  border-radius: 25px ;
+    padding: 50px;
+}
+.botonDetail{
+  width: 90%;
+  padding: 12px;
+  background-color: #39b78f; 
+  color: white;
+  font-weight: 700;
+  font-family: Arial, Helvetica, sans-serif ;
+  font-size: 20px;
+  border-radius: 15px ;
+  border: #39b78f;
+  margin:7px;
+}
+.precioDetail{
+  color: rgb(67, 67, 67);
+  margin-bottom: 25px;
+  font-size: 25px;
+}
+.botonDetail:hover{
+background-color: #74dbcb;
+}
+.nombreProducto{
+  font-size: 50px;
+  margin-top: 15px;
+  padding: 50px;
+  font-family: Arial, Helvetica, sans-serif;
+}
