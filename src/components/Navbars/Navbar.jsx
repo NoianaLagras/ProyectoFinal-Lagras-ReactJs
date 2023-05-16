@@ -12,7 +12,7 @@ const navigate = useNavigate()
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark navbar-sticky">
     <div><img src={Logo} alt="Logo" className='logoP' onClick={()=>navigate(`/`)}/></div>
     <div className="container-fluid">
-    <p className="navbar-brand" >Neathur Shop...</p>
+    <p className="navbar-brand" onClick={()=>navigate(`/`)}>Neathur Shop...</p>
     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span className="navbar-toggler-icon"></span>
     </button>
