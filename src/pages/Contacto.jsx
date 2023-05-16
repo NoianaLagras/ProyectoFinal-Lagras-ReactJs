@@ -1,7 +1,7 @@
 import React from 'react'
 import Container from '../components/layout/Container'
 import RedesSociales from '../components/Redes/RedesSociales'
-import DondeEstamos from '../components/Redes/DondeEstamos'
+
 const Contacto = () => {
   return (
     <Container>
@@ -12,7 +12,7 @@ const Contacto = () => {
 
         <div className='contactoContainer'>
           <div className='contactoForm' >
-            <form className="row g-3 needs-validation " novalidate>
+            <form className="row g-3 needs-validation " noValidate>
   <div className="col-md-4">
     <label for="validationCustom01" className="form-label">First name</label>
     <input type="text" className="form-control" id="validationCustom01" value="Nombre" required/>
@@ -47,7 +47,7 @@ const Contacto = () => {
   <div className="col-md-3">
     <label for="validationCustom04" className="form-label">State</label>
     <select className="form-select" id="validationCustom04" required>
-      <option selected disabled value="">Choose...</option>
+      <option selected disabled >Choose...</option>
       <option>...</option>
     </select>
     <div className="invalid-feedback">
@@ -56,7 +56,7 @@ const Contacto = () => {
   </div>
   <div className="col-12">
     <div className="form-check">
-      <input className="form-check-input" type="checkbox" value="" id="invalidCheck" required/>
+      <input className="form-check-input" type="checkbox"  id="invalidCheck" required/>
       <label className="form-check-label" for="invalidCheck">
         Agree to terms and conditions
       </label>
@@ -77,7 +77,7 @@ const Contacto = () => {
          <div className='contactoDatos'>
           <RedesSociales/>
           <p>Encontranos aca !</p>
-          <DondeEstamos/>
+
          </div>
            
 

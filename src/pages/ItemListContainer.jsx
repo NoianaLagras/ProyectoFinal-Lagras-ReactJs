@@ -1,30 +1,31 @@
 import React, { Fragment } from "react"
 import { useParams } from "react-router-dom";
 import Carousel from "../components/Carrousel/Carousel";
-import Producto from './../assets/images/anillo18.webp'
-import Producto1 from './../assets/images/anillo9.webp'
-import Producto2 from './../assets/images/anillo1.webp'
-import Producto3 from './../assets/images/anillo2.webp'
-import Producto4 from './../assets/images/anillo2.webp'
-import Producto5 from './../assets/images/anillo4.webp'
-import Producto6 from './../assets/images/anillo6.webp'
-import Producto7 from './../assets/images/anillo7.webp'
-import Producto8 from './../assets/images/collar.webp'
-import Producto9 from './../assets/images/anillo10.webp'
-import Producto10 from './../assets/images/collar1.webp'
-import Producto11 from './../assets/images/collar2.webp'
-import Producto12 from './../assets/images/collar3.webp'
-import Producto13 from './../assets/images/collar5.webp'
-import Producto14 from './../assets/images/pulsera6.webp'
-import Producto15 from './../assets/images/pulsera5.webp'
-import Producto16 from './../assets/images/anillo1.webp'
-import Producto17 from './../assets/images/pulsera9.webp'
-import  Container  from './../components/layout/Container';
-import Card from './../components/Productos/Card'
-import Slider1 from './../assets/images/CollarSlider1.webp'
-import Slider2 from './../assets/images/AnillosSlider1.webp'
-import Slider3 from './../assets/images/PulseraSlider.webp'
-function ProductosPorCategoria() {
+import Producto from '../assets/images/anillo18.webp'
+import Producto1 from '../assets/images/anillo9.webp'
+import Producto2 from '../assets/images/anillo1.webp'
+import Producto3 from '../assets/images/anillo2.webp'
+import Producto4 from '../assets/images/anillo2.webp'
+import Producto5 from '../assets/images/anillo4.webp'
+import Producto6 from '../assets/images/anillo6.webp'
+import Producto7 from '../assets/images/anillo7.webp'
+import Producto8 from '../assets/images/collar.webp'
+import Producto9 from '../assets/images/anillo10.webp'
+import Producto10 from '../assets/images/collar1.webp'
+import Producto11 from '../assets/images/collar2.webp'
+import Producto12 from '../assets/images/collar3.webp'
+import Producto13 from '../assets/images/collar5.webp'
+import Producto14 from '../assets/images/pulsera6.webp'
+import Producto15 from '../assets/images/pulsera5.webp'
+import Producto16 from '../assets/images/anillo1.webp'
+import Producto17 from '../assets/images/pulsera9.webp'
+import  Container  from '../components/layout/Container';
+import Card from '../components/Productos/Card'
+import Slider1 from '../assets/images/CollarSlider1.webp'
+import Slider2 from '../assets/images/AnillosSlider1.webp'
+import Slider3 from '../assets/images/PulseraSlider.webp'
+import  Saludo from '../components/Saludo'
+function ItemListContainer() {
   const {id} = useParams ()
   const product =
     [
@@ -231,13 +232,26 @@ function ProductosPorCategoria() {
         },
     ];
 
-  const productosFiltrados = product.filter(
-    (product) => product.category === id
-  );
 
+  let productosFiltrados;
+
+  if (id) {
+
+    productosFiltrados = product.filter((product) => product.category === id);
+  } else {
+
+    productosFiltrados = product;
+  }
   return (
     <Container>
     <div className="productosContainer">
+    {window.location.pathname === "/" && (
+    <Fragment>
+    <Carousel image1={Slider1} image2={Slider3} image3={Slider2} />
+    <Saludo greeting="Bienvenidos a mi Tienda Web!!"/>
+    <h1 className="productosIndex">Productos</h1> 
+    </Fragment>
+  )}
     {window.location.pathname === "/category/1" && (
     <Fragment>
     <Carousel image1={Slider1} image2={Slider3} image3={Slider2} />
@@ -272,4 +286,4 @@ function ProductosPorCategoria() {
   );
 }
 
-export default ProductosPorCategoria;
+export default ItemListContainer;
