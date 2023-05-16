@@ -31,8 +31,6 @@ function ItemDetail() {
     const restar = () => {
         setNumero(numero - 1);
     };
-    
-    
 
   const [Cargando, setCargando] = useState(true);
   const [product, setProduct] = useState({});
@@ -260,8 +258,6 @@ if (!product) {
   <button className='addCart'onClick={()=>navigate(-1)}>⬅️Volver</button>
   </div>
 }
-//
- 
 
 return (
   <Container>

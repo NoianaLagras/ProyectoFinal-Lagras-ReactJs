@@ -23,10 +23,12 @@ import  Container  from '../components/layout/Container';
 import Card from '../components/Productos/Card'
 import Slider1 from '../assets/images/CollarSlider1.webp'
 import Slider2 from '../assets/images/AnillosSlider1.webp'
-import Slider3 from '../assets/images/PulseraSlider.webp'
+import Slider3 from '../assets/images/PulseraSlider1.webp'
 import  Saludo from '../components/Saludo'
 function ItemListContainer() {
+
   const {id} = useParams ()
+
   const product =
     [
         {
@@ -232,16 +234,13 @@ function ItemListContainer() {
         },
     ];
 
-
   let productosFiltrados;
-
   if (id) {
-
     productosFiltrados = product.filter((product) => product.category === id);
   } else {
-
     productosFiltrados = product;
   }
+  
   return (
     <Container>
     <div className="productosContainer">
