@@ -27,8 +27,8 @@ const navigate = useNavigate()
           </p>
           <ul className="dropdown-menu bg-dark">
             <li><NavLink className="dropdown-item  bg-dark text-white p-2 " to={'/category/1'}>Anillos</NavLink></li>
-            <li><NavLink className="dropdown-item bg-dark text-white p-2 " to={'/category/2'}>Pulseras</NavLink></li>
-            <li><NavLink className="dropdown-item bg-dark text-white p-2 " to={'/category/3'}>Collares</NavLink></li>
+            <li><NavLink className="dropdown-item bg-dark text-white p-2 " to={'/category/3'}>Pulseras</NavLink></li>
+            <li><NavLink className="dropdown-item bg-dark text-white p-2 " to={'/category/2'}>Collares</NavLink></li>
           </ul></li>
         <li className="nav-item dropdown ">
           <p className="nav-link dropdown-toggle"  role="button" data-bs-toggle="dropdown" aria-expanded="false">

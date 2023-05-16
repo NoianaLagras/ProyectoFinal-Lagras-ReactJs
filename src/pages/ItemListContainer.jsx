@@ -261,7 +261,7 @@ function ItemListContainer() {
   {window.location.pathname === "/category/2" && (
     <Fragment>
     <Carousel image1={Slider2} image2={Slider3} image3={Slider1} />
-    <h1 className="productosIndex">Collare</h1> 
+    <h1 className="productosIndex">Collares</h1> 
     </Fragment>
   )}
    {window.location.pathname === "/category/3" && (
