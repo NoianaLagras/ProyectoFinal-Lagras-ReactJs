@@ -30,20 +30,18 @@ function Card(props) {
 
     return () => clearTimeout(timer);
   }, []);
- if (Cargando){
   return (
-  <div className="cargando">Cargando...</div>
-  )
- }else {
-  return (
-    <div className="card">
-          <img src={img} alt={name} />
-          <h3>{name}</h3>
-          <p>${price}</p>
-          <button className="addCart" onClick={() => navigate(`/item/${id}`)}>Ver detalle</button>
-    </div>
+    Cargando ? (
+      <div className="cargando">Cargando...</div>
+    ) : (
+      <div className="card">
+        <img src={img} alt={name} />
+        <h3>{name}</h3>
+        <p>${price}</p>
+        <button className="addCart" onClick={() => navigate(`/item/${id}`)}>Ver detalle</button>
+      </div>
+    )
   );
-}
 } 
 
 export default Card;
