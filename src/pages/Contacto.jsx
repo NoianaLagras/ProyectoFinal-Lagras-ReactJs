@@ -2,8 +2,11 @@ import React, { useRef, useState } from 'react';
 import Container from '../components/layout/Container';
 import RedesSociales from '../components/Redes/RedesSociales';
 import Swal from 'sweetalert2';
+import ComponenteFormulario from '../components/Formulario/ComponenteFormulario';
+
 
 const Contacto = () => {
+
   const formulario = useRef(null);
   const [formValues, setFormValues] = useState({
     firstName: "",
@@ -73,49 +76,67 @@ const Contacto = () => {
       <div className='contactoContainer'>
         <div className='contactoForm'>
           <form ref={formulario} onSubmit={handleSubmit} name= 'formValue' className="row g-3 needs-validation">
-          <div className="col-md-4">
-              <label htmlFor="validationCustom01" className="form-label">First name</label>
-              <input  type="text" className="form-control" id="validationCustom01" placeholder="Nombre" name="firstName" defaultValue={formValues.firstName}  onChange={handleChange} required/>
-              <div className="valid-feedback">
-                Looks good!
-              </div>
-            </div>
-            <div className="col-md-4">
-              <label htmlFor="validationCustom02" className="form-label">Last name</label>
-              <input   type="text" className="form-control" id="validationCustom02" placeholder="Apellido" name= "lastName" defaultValue={formValues.lastName} onChange={handleChange}  required />
-              <div className="valid-feedback">
-                Looks good!
-              </div>
-            </div>
-            <div className="col-md-4">
-              <label htmlFor="validationCustomUsername" className="form-label">Correo Electronico</label>
-              <div className="input-group has-validation">
-                <span className="input-group-text"  id="inputGroupPrepend">Email</span>
-                <input  type="text" className="form-control" id="validationCustomUsername"
-aria-describedby="inputGroupPrepend" name="mail" defaultValue={formValues.mail} onChange={handleChange}  required
-          />
-              </div>
-            </div>
-            <div className="col-md-6">
-              <label htmlFor="validationCustom03" className="form-label">Ciudad y Provincia</label>
-              <input type="text"   name='city' className="form-control" id="validationCustom03"  defaultValue={formValues.city} onChange={handleChange} required />
-            </div>
-            <div className="form-check mb-3">
-    <input type="checkbox" className="form-check-input" id="validationFormCheck1" onChange={handleChange} name= "terminos" checked={formValues.terminos}></input>
-    <label className="form-check-label" htmlFor="validationFormCheck1">Acepta Terminos y Condiciones</label>
-  </div>
-            <div className="mb-3">
-              <label htmlFor="validationTextarea">Mensaje</label>
-             <textarea  className="form-control" id="validationTextarea" defaultValue={formValues.mensaje} name='mensaje' onChange={handleChange}  required></textarea>
-</div>
+          <ComponenteFormulario
+        label="First name"
+        placeholder="Nombre"
+        name="firstName"
+        value={formValues.firstName}
+        onChange={handleChange}
+      />
+      <ComponenteFormulario
+        label="Last name"
+        placeholder="Apellido"
+        name="lastName"
+        value={formValues.lastName}
+        onChange={handleChange}
+      />
+      <ComponenteFormulario
+        label="Correo Electronico"
+        placeholder="Email"
+        name="mail"
+        value={formValues.mail}
+        onChange={handleChange}
+      />
+      <ComponenteFormulario
+        label="Ciudad y Provincia"
+        placeholder="Ciudad"
+        name="city"
+        value={formValues.city}
+        onChange={handleChange}
+      />
+      <div className="form-check mb-3">
+        <input
+          type="checkbox"
+          className="form-check-input"
+          id="validationFormCheck1"
+          onChange={handleChange}
+          name="terminos"
+          checked={formValues.terminos}
+        />
+        <label className="form-check-label" htmlFor="validationFormCheck1">
+          Acepta Terminos y Condiciones
+        </label>
+      </div>
+      <div className="mb-3">
+        <label htmlFor="validationTextarea">Mensaje</label>
+        <textarea
+          className="form-control"
+          id="validationTextarea"
+          defaultValue={formValues.mensaje}
+          name="mensaje"
+          onChange={handleChange}
+          required
+        ></textarea>
+      </div>
   <div className="col-12">
     <button className="btn btn-primary" type="submit" required >Enviar</button>
   </div>
           </form>
         </div>
         <div className='contactoDatos'>
-          <RedesSociales />
           <p>Encontranos aca !</p>
+          <RedesSociales />
+          
         </div>
       </div>
     </Container>

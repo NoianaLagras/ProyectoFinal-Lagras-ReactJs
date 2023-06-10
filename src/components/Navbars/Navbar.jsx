@@ -1,12 +1,12 @@
 import React from 'react'
-import CartWidget from './CartWidget'
 import Logo from '../../assets/images/Logo.webp'
 import '../../App.css'
-import { NavLink, useNavigate } from 'react-router-dom'
+import {  NavLink, useNavigate } from 'react-router-dom'
+import CantidadEnCarrito from './CantidadEnCarrito'
 
 
 const Navbar = () => {
-const navigate = useNavigate()
+const navigate = useNavigate();
   return (
 
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark navbar-sticky">
@@ -45,8 +45,9 @@ const navigate = useNavigate()
       </ul>
     </div>
   </div>
-  <h2><CartWidget/>1</h2>
+  <CantidadEnCarrito />
 </nav>
+
   )
 }
 

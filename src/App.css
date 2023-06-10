@@ -53,15 +53,34 @@ scale: 1.1;
 .contactoForm{
   grid-area: form;
 }
-.redIcon{
-  display: inline-block;
-  margin: 5px;
+.redes{
+  display: block;
 }
+.redIcon{
+  font-size: 70px;
+  margin: 5px;
+  cursor: pointer;
+}
+.redIcon:nth-child(1) svg {
+  color: blue; 
+}
+
+.redIcon:nth-child(2) svg {
+  background: linear-gradient(to right, rgb(255, 157, 0), rgb(184, 16, 210));
+  color:rgb(255, 255, 255)
+}
+
+.redIcon:nth-child(3) svg {
+  color: rgb(221, 207, 13);}
+
+
+
+
 .contactoDatos{
   grid-area: redes;
   font-size: 30px;
   text-align: center;
-  padding: 20px;
+  padding: 10px;
   background: #341948;
   border-radius: 5px;
   color: white;
@@ -95,16 +114,18 @@ scale: 1.1;
   padding: 200px 0;
   background-image: url('../src/assets/images/CollarSlider1.webp');
 }
+.medidasAnillos h2 {
+color: #000000;
+}
 .medidasAnillos{
-  background-color: black;
+  background-color: rgb(255, 255, 255);
   opacity: 0.70;
   padding: 50px 0;
   text-align: center;
-  color: white;
+  color: rgb(0, 0, 0);
   font-size: 20px;
 }
-.table-danger{
-  color: white;
+.table{
   margin: 50px;
   padding: 20px;
 }
@@ -120,7 +141,6 @@ td{
 }
 .productosIndex{
   margin: 50px auto;
-
   text-align: center;
 }
 .productosContainer{
@@ -131,7 +151,11 @@ h2{
 color: #dddbdf;
 padding: 0 20px;
 }
+header{
+  background-color: black;
+}
 footer{
+  margin-top: 300px;
   background-color: #170B3B;
   color: aliceblue;
   text-align: center;
@@ -139,7 +163,7 @@ footer{
   padding: 25px;
   margin-top: 100px;
   height: 100px;
-  
+
 }
 .nav-item:hover{ 
 
@@ -170,7 +194,7 @@ cursor: pointer;
 
 .productos{
 
-  padding-top: 50px;
+  padding: 70px 20px;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: auto;
@@ -297,4 +321,353 @@ background-color: #74dbcb;
   margin-top: 15px;
   padding: 50px;
   font-family: Arial, Helvetica, sans-serif;
+}
+
+.cart-modal {
+  position: fixed;
+  display: block;
+  cursor: pointer;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.903);
+  color: white;
+  border: 1px solid #ccc;
+  padding: 30px;
+  width: 70%;
+  max-width: 90%;
+  z-index: 9999;
+
+  ;
+}
+.modal-products{
+  max-height: 400px;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #518bab #000000;
+}
+.modal-items {
+  
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+
+}
+.modal-items img {
+  width: 100px;
+}
+.modal-name {
+  display: block;
+  font-size: 25px;
+  font-weight: 600;
+  font: monospace;
+}
+.modal-head {
+font-family: Arial, Helvetica, sans-serif;
+
+}
+.close-modal {
+  font-size: 30px;
+  cursor: pointer;
+  position: absolute;
+  top: 20px;
+  right: 10px;
+
+}
+.modal-cantidad{
+  display: flex;
+  align-items: center;
+}
+.modal-cantidad{
+  display: flex;
+  align-items: center;
+  text-align:center ;
+}
+.modal-button{
+padding: 5px;
+}
+.modal-numero{
+font-size: 25px;
+padding-bottom:10px ;
+}
+.modal-footer{
+  display: flex;
+  justify-content: space-between !important;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.modal-footer button{
+  border: transparent;
+  background-color: #39b78f;
+  padding: 7px;
+  font-weight: 500;
+  border-radius: 7px;
+}
+.modal-footer button:hover{
+  background-color: #39b78fb9
+}
+.carrito-modal{
+  cursor: pointer;
+}
+.remove-modal{
+  font-size: 25px;
+  padding: 10px;
+  font-weight: 900;
+  color: #f60626;
+
+}
+.checkout-header{
+  background-color: #000000cf;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.checkout-header img {
+  width: 150px;
+}
+.checkout-compras{
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+}
+.checkout-products{
+  width: 40%;
+  margin: 50px 10px;
+  max-height: 700px;
+  overflow-y: auto;
+  font-size: 20px;
+  scrollbar-width: thin;
+  padding: 10px;
+  border-radius: 15px;
+}
+.checkout-products img{
+  width: 100px;
+  height: 100px;
+}
+.checkout-Formulario{
+  font-size: 20px;
+  width: 50%;
+  text-align: center;
+  background-color: #cacacab7;
+  margin: 50px 10px;
+  padding: 10px;
+  border-radius: 15px ;
+  color: #010003;
+}
+.checkout-Formulario input{
+  width: 80% !important;
+  margin: 0 auto;
+}
+
+.checkout-items{
+  display: flex;
+  justify-content: space-between;
+  color: rgba(0, 0, 0, 0.872);
+  padding: 20px;
+}
+.checkout-carrito{
+  text-align: center;
+  font-weight: 600;
+  font-size: 30px;
+}
+.selected {
+  font-weight: 700;
+  text-decoration: underline 3px #f60626;
+}
+.envios {
+  margin: 20px;
+  border-radius: 15px;
+  background-color: #01000338;
+}
+.seleccion-envios {
+  cursor: pointer;
+}
+
+.CarritoLenght{
+  border-radius: 15px;
+  margin-left: 20px;
+  background-color: #f60626;
+  text-align: center;
+  padding: 0px 5px;
+}
+.order{
+  border: transparent;
+  border-radius: 10px;
+  background-color: #170B3B;
+  color: white;
+  padding: 10px;
+}
+.order:hover{
+  background-color: #170b3ba0;
+}
+.checkout-total{
+  font-size: 35px;
+}
+@media (max-width : 1024px){
+  .navbar-brand{
+    display: none;
+  }
+  .navbar-sticky{
+    align-items: center;
+  }
+  .logoP{
+    position: absolute;
+    top: 15px;
+    left: 10px;
+  }
+  .carrito-modal{
+    position: absolute;
+    top: 25px;
+    right: 10px;
+  }
+  .container-fluid{
+    padding: 20px;
+  }
+  .navbar-toggler{
+    margin: 20px auto;
+  }
+  .ContactoHead{
+    padding: 30px;
+  }
+  .contactoContainer{
+      padding: 50px;
+      display: grid;
+      margin: 50px auto;
+      background-color: #dddbdf;
+      grid-template-columns: 1fr 1fr ;
+        grid-template-areas: 
+        "form form "
+        "redes redes";
+    }
+    .contactoDatos{
+      margin-top: 50px;
+    }
+    .redes{
+    display: flex;
+    justify-content: space-around;
+    }
+    .redIcon{
+      font-size: 50px;
+      margin: 5px;
+      cursor: pointer;
+    }
+    .productos{
+      padding: 40px 20px;
+        grid-template-columns: 1fr 1fr ;
+        grid-template-rows: auto;
+        gap: 20px;
+        row-gap: 50px;
+      }
+      .itemDetail {
+        display: block;
+          
+      
+      }
+      .imgDetail{
+              margin: 20px;
+              width: 500px;
+              margin: 10px auto;
+      }
+      .table-container {
+        margin: 50px 0;
+        padding: 15px;
+        
+      }
+      .table {
+        padding: 0px;
+        margin: 0;
+        max-width: 80%;
+      }
+      
+      .table tr {
+        padding: 10px;
+      }
+      .table td{
+        padding: 5px;
+      }
+      .cart-modal{
+        width: 85%;
+        padding: 15px;
+      }
+      .modal-items{
+        padding: 5px;
+        align-items: center;
+      }
+      .modal-items img {
+        width: 70px;
+    }
+    .modal-name{
+      font-size: 18px;
+    }
+    .checkout-header{
+      height: 200px;
+    }
+    .checkout-header h2{
+      margin-left: 50px;
+    }
+    .checkout-compras{
+      flex-direction: column-reverse;
+      margin: 50px auto;
+    }
+    .checkout-Formulario{
+      width: 90%;
+      margin: 20px auto;
+    }
+    .checkout-products{
+      width: 100%;
+      
+    }
+}
+@media ( max-width: 750px){
+  .productos{
+    padding: 40px 60px;
+      grid-template-columns: 1fr ;
+      grid-template-rows: auto;
+    }
+    .card h3{
+      font-size: 20px;
+    }
+    .carrito-modal{
+      top: 30px;
+    }
+    .spinnerLogo{
+       margin-top: -100px;
+       margin-left: -100px;
+       
+    }
+    .spinner{
+      width: 200px;
+      height: 200px;
+    }
+  .cargando{
+    display: none;
+  }
+  .cart-modal{
+    width: 95%;
+  }
+  .modal-products{
+    padding: 0;
+  }
+  .modal-name {
+    font-size: 13px;
+    padding: 3px;
+  }
+  .modal-numero{
+    font-size: 15px;
+  }
+  .final-price{
+    font-size: 10px;
+    padding: 2px;
+  }
+  .checkout-compras{
+  padding: 5px;
+  }
+  .envios {
+    margin: 20px 5px;
+  }
+  .checkout-items{
+    font-size: 15px;
+    padding: 5px;
+  }
 }
