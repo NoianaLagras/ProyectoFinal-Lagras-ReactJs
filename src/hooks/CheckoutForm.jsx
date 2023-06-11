@@ -1,10 +1,16 @@
 import Swal from 'sweetalert2';
 import { addDoc, collection } from 'firebase/firestore';
-import { db } from '../firebase.config';
 import { calculateTotal } from '../helpers/index';
+import { auth, db } from '../firebase.config';
 
 const CheckoutHandleSubmit = async (carrito, opcionEnvio, formValues, setFormValues, formulario, setOpcionEnvio) => {
-    const orderData = { items: carrito, opcionEnvio, formData: formValues, total: calculateTotal(carrito, opcionEnvio) };
+  const currentUser = auth.currentUser;
+  const orderData = { 
+    items: carrito, 
+    opcionEnvio, 
+    formData: formValues, 
+    total: calculateTotal(carrito, opcionEnvio),
+    userId: currentUser.uid };
   
     if (formValues.email !== formValues.confirmEmail) {
       Swal.fire('Error', 'Los correos electrónicos no coinciden', 'error');

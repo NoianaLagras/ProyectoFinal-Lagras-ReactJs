@@ -4,7 +4,7 @@ import Swal from 'sweetalert2';
 
 import { auth } from '../../firebase.config';
 
-const Registro = ({ closeModal }) => {
+const Registro = ({ closeModal, isLoggedIn }) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
@@ -18,14 +18,18 @@ const Registro = ({ closeModal }) => {
         closeModal();
       })
       .catch((error) => {
-        console.log(error)
-        Swal.fire('Error en registro','intentelo de nuevo mas tarde', 'error');
-        });
+        console.log(error);
+        Swal.fire('Error en registro', 'Inténtelo de nuevo más tarde', 'error');
+      });
   };
+
+  if (isLoggedIn) {
+    return null;
+  }
 
   return (
     <form onSubmit={handleRegistro}>
-      <h2>Registro</h2>
+      <h1>Registro</h1>
       <div className="mb-3">
         <label htmlFor="email" className="form-label">Correo electrónico</label>
         <input

@@ -151,17 +151,20 @@ h2{
 color: #dddbdf;
 padding: 0 20px;
 }
+.user {
+  color: #000000;
+}
+.login{color: #000000;}
 header{
   background-color: black;
 }
 footer{
-  margin-top: 300px;
+  margin-top: 700px;
   background-color: #170B3B;
   color: aliceblue;
   text-align: center;
   font-size: 30px;
   padding: 25px;
-  margin-top: 100px;
   height: 100px;
 
 }
@@ -339,6 +342,52 @@ background-color: #74dbcb;
   z-index: 9999;
 
   ;
+}
+.orders{
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 100px;
+  background-image: url('../src/assets/images/AnillosSlider1.webp') ;
+  background-size: cover;
+  padding: 200px 0;
+  font-size: 30px;
+  text-align: center;
+  
+}
+.orden{
+  width: 100%;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  padding: 50px 0;
+  background-color: rgba(255, 255, 255, 0.632);
+}
+.orderChild{
+  display: flex;
+  flex-direction: column;
+ margin-bottom: 20px;
+  border-radius: 5px;
+  padding: 20px;
+  font-size: 20px;
+}
+.orderChild p {
+  margin: 0;
+}
+
+.orderChild img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 5px black;
+  margin-bottom: 10px;
+}
+
+.orderChild span {
+  display: block;
+  margin-top: 10px;
+}
+.orderChild img{
+  width: 100px;
+  height: 100px;
 }
 .modal-products{
   max-height: 400px;

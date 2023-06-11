@@ -7,6 +7,8 @@ import Preguntas from '../pages/Preguntas';
 import Contacto from '../pages/Contacto';
 import ItemListContainer from '../pages/ItemListContainer';
 import Checkout from '../pages/Checkout';
+import Orders from '../pages/Orders';
+
 
 const Rutas = () => {
   return (
@@ -20,6 +22,7 @@ const Rutas = () => {
         <Route path="/category/:id" element={<ItemListContainer />} />
         <Route path="*" element={<Error404 />} />
         <Route path="/checkout" element={<Checkout />} />
+        <Route path="/orders" element={<Orders />} />
       </Routes>
     </BrowserRouter>
   );

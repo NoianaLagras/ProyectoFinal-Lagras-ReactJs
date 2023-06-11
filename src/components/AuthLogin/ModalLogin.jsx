@@ -1,12 +1,26 @@
+import React, { useState } from 'react';
 import Registro from './Registro';
 import Login from './Login';
-import { useState } from 'react';
-
 const Modal = () => {
   const [showModal, setShowModal] = useState(false);
+  const [activeTab, setActiveTab] = useState('registro');
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [user, setUser] = useState(null);
 
   const toggleModal = () => {
     setShowModal(!showModal);
+    setActiveTab('registro');
+  };
+
+  const handleLogin = (loggedInUser) => {
+    setIsLoggedIn(true);
+    setUser(loggedInUser);
+    toggleModal();
+  };
+
+  const handleLogout = () => {
+    setIsLoggedIn(false);
+    setUser(null);
   };
 
   return (
@@ -23,20 +37,52 @@ const Modal = () => {
                 </button>
               </div>
               <div className="modal-body">
-                <div className="row">
-                  <div className="col-md-6">
-                    <Registro closeModal={toggleModal} />
+                <ul className="nav nav-tabs">
+                  <li className="nav-item" role="presentation">
+                    <button
+                      className={`nav-link ${activeTab === 'registro' ? 'active' : ''}`}
+                      id="registro-tab"
+                      data-bs-toggle="tab"
+                      onClick={() => setActiveTab('registro')}
+                    >
+                      Registro
+                    </button>
+                  </li>
+                  <li className="nav-item" role="presentation">
+                    <button
+                      className={`nav-link ${activeTab === 'inicioSesion' ? 'active' : ''}`}
+                      id="inicioSesion-tab"
+                      data-bs-toggle="tab"
+                      onClick={() => setActiveTab('inicioSesion')}
+                    >
+                      Inicio Sesión
+                    </button>
+                  </li>
+                </ul>
+                <div className="tab-content mt-3">
+                  <div
+                    className={`tab-pane fade ${activeTab === 'registro' ? 'show active' : ''}`}
+                    id="registro"
+                    role="tabpanel"
+                    aria-labelledby="registro-tab"
+                  >
+                    <Registro closeModal={toggleModal} isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />
                   </div>
-                  <div className="col-md-6">
-                    <Login closeModal={toggleModal} />
-                  </div>
+                  <div
+  className={`tab-pane fade ${activeTab === 'inicioSesion' ? 'show active' : ''}`}
+  id="inicioSesion"
+  role="tabpanel"
+  aria-labelledby="inicioSesion-tab"
+>
+  <Login closeModal={toggleModal} handleLogin={handleLogin} isLoggedIn={isLoggedIn} user={user} />
+</div>
                 </div>
               </div>
             </div>
           </div>
         </div>
       )}
-    </div>
+      </div>
   );
 };
 
