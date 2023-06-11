@@ -1,70 +1,70 @@
-# Getting Started with Create React App
+# Proyecto Final: E-commerce en React.js
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+¡Bienvenido/a al repositorio del proyecto final del curso de React.js! En este proyecto, hemos desarrollado un e-commerce utilizando React.js y otras tecnologías relacionadas. En este archivo README, encontrarás información importante sobre el proyecto y cómo ejecutarlo en tu máquina local.
 
-## Available Scripts
+## Descripción del proyecto
 
-In the project directory, you can run:
+El objetivo de este proyecto final fue construir un e-commerce completamente funcional utilizando React.js como la biblioteca principal. El e-commerce cuenta con las siguientes características:
 
-### `npm start`
+- Catálogo de productos: Los usuarios pueden explorar una amplia variedad de productos y ver los detalles de cada uno.
+- Carrito de compras: Los usuarios pueden agregar productos al carrito de compras y realizar compras.
+- Gestión de usuarios: Los usuarios pueden registrarse e iniciar sesión.
+- Envío de órdenes de compra y formularios a su vendedor.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Tecnologías utilizadas
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- React.js: Utilizamos React.js como el marco de trabajo principal para construir la interfaz de usuario interactiva y reactiva.
+- HTML y CSS: Utilizamos HTML y CSS para crear la estructura y el estilo visual de la aplicación.
 
-### `npm test`
+## Enlaces
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Repositorio: [ProyectoFinal-Lagras-ReactJs](https://github.com/tu_usuario/ProyectoFinal-Lagras-ReactJs)
+- Versión de Node.js: 18.15.0
 
-### `npm run build`
+## Recursos adicionales
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- Documentación oficial de React.js: [https://legacy.reactjs.org/docs](https://legacy.reactjs.org/docs)
+- Documentación oficial de Firebase: [https://firebase.google.com/docs?hl=es-419](https://firebase.google.com/docs?hl=es-419)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Agradecimientos
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Queremos expresar nuestro agradecimiento a todos los profesores y compañeros del curso de React.js por su apoyo y orientación durante el desarrollo de este proyecto.
 
-### `npm run eject`
+¡Esperamos que disfrutes explorando nuestro e-commerce en React.js!
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Nota: Este proyecto es solo con fines educativos y no se encuentra en producción.
+# Proyecto Final: E-commerce en React.js
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+¡Bienvenido/a al repositorio del proyecto final del curso de React.js! En este proyecto, hemos desarrollado un e-commerce utilizando React.js y otras tecnologías relacionadas. En este archivo README, encontrarás información importante sobre el proyecto y cómo ejecutarlo en tu máquina local.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Descripción del proyecto
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+El objetivo de este proyecto final fue construir un e-commerce completamente funcional utilizando React.js como la biblioteca principal. El e-commerce cuenta con las siguientes características:
 
-## Learn More
+- Catálogo de productos: Los usuarios pueden explorar una amplia variedad de productos y ver los detalles de cada uno.
+- Carrito de compras: Los usuarios pueden agregar productos al carrito de compras y realizar compras.
+- Gestión de usuarios: Los usuarios pueden registrarse e iniciar sesión.
+- Envío de órdenes de compra y formularios a su vendedor.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Tecnologías utilizadas
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- React.js: Utilizamos React.js como el marco de trabajo principal para construir la interfaz de usuario interactiva y reactiva.
+- HTML y CSS: Utilizamos HTML y CSS para crear la estructura y el estilo visual de la aplicación.
 
-### Code Splitting
+## Enlaces
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+- Repositorio: [ProyectoFinal-Lagras-ReactJs](https://github.com/tu_usuario/ProyectoFinal-Lagras-ReactJs)
+- Versión de Node.js: 18.15.0
 
-### Analyzing the Bundle Size
+## Recursos adicionales
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+- Documentación oficial de React.js: [https://legacy.reactjs.org/docs](https://legacy.reactjs.org/docs)
+- Documentación oficial de Firebase: [https://firebase.google.com/docs?hl=es-419](https://firebase.google.com/docs?hl=es-419)
 
-### Making a Progressive Web App
+## Agradecimientos
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Queremos expresar nuestro agradecimiento a todos los profesores y compañeros del curso de React.js por su apoyo y orientación durante el desarrollo de este proyecto.
 
-### Advanced Configuration
+¡Esperamos que disfrutes explorando nuestro e-commerce en React.js!
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Nota: Este proyecto es solo con fines educativos y no se encuentra en producción.

@@ -45,12 +45,12 @@ setGiveMeTotal(total);
 }, [carrito]);
 const handleCantidadChange = (productId, newCantidad) => {
   if (newCantidad >= 1) {
-    const updatedCarrito = carrito.map((item) => {
-      if (item.id === productId) {
-        const cantidad = Math.min(newCantidad, item.stock);
-        return { ...item, cantidad };
+    const updatedCarrito = carrito.map((product) => {
+      if (product.id === productId) {
+        const cantidad = Math.min(newCantidad, product.stock);
+        return { ...product, cantidad };
       }
-      return item;
+      return product;
     });
     setCarrito(updatedCarrito);
   }

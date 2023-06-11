@@ -22,7 +22,7 @@ const ModalCart = ({ isOpen, onClose }) => {
               </p>
             </div>
             <ul className="modal-products">
-              {carrito.map((item) => (
+              {carrito && carrito.map((item) => (
                 <div key={item.id} className="modal-items">
                   <img src={item.img} alt={item.name} />
                   <p className="modal-name">{item.name}</p>
