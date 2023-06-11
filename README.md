@@ -52,7 +52,7 @@ El objetivo de este proyecto final fue construir un e-commerce completamente fun
 - HTML y CSS: Utilizamos HTML y CSS para crear la estructura y el estilo visual de la aplicación.
 
 ## Enlaces
-
+-Link del proyecto : (demo ) (https://proyecto-final-lagras-react-js.vercel.app/)
 - Repositorio: [ProyectoFinal-Lagras-ReactJs](https://github.com/tu_usuario/ProyectoFinal-Lagras-ReactJs)
 - Versión de Node.js: 18.15.0
 

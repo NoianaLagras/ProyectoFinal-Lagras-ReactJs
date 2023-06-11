@@ -3,9 +3,11 @@ import Logo from '../../assets/images/Logo.webp'
 import '../../App.css'
 import {  NavLink, useNavigate } from 'react-router-dom'
 import CantidadEnCarrito from './CantidadEnCarrito'
+import Modal from '../AuthLogin/ModalLogin'
 
 
 const Navbar = () => {
+
 const navigate = useNavigate();
   return (
 
@@ -41,6 +43,9 @@ const navigate = useNavigate();
         </li>
         <li className="nav-item">
           <NavLink className="nav-link" to={'/contacto'}>Contacto</NavLink>
+        </li>
+        <li className="nav-item">
+          <Modal/>
         </li>
       </ul>
     </div>
