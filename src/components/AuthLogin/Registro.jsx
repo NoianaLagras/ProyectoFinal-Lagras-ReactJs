@@ -18,8 +18,9 @@ const Registro = ({ closeModal }) => {
         closeModal();
       })
       .catch((error) => {
-        Swal.fire('Error en el registro', error.message, 'error');
-      });
+        console.log(error)
+        Swal.fire('Error en registro','intentelo de nuevo mas tarde', 'error');
+        });
   };
 
   return (

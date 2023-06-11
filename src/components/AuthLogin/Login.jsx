@@ -1,5 +1,6 @@
-import React, { useState } from 'react'
-import {auth} from '../../firebase.config'
+import React, { useState } from 'react';
+import { signInWithEmailAndPassword } from 'firebase/auth';
+import { auth } from '../../firebase.config';
 import Swal from 'sweetalert2';
 
 const Login = ({ closeModal }) => {
@@ -9,14 +10,15 @@ const Login = ({ closeModal }) => {
   const handleLogin = (e) => {
     e.preventDefault();
 
-    auth.signInWithEmailAndPassword(email, password)
+    signInWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         const user = userCredential.user;
         Swal.fire('Inicio de sesión exitoso', `Usuario: ${user.email}`, 'success');
         closeModal();
       })
-      .catch((error) => {
-        Swal.fire('Error en el inicio de sesión', error.message, 'error');
+      .catch((error) => { 
+        console.log(error)
+        Swal.fire('Error en el inicio de sesión','intentelo de nuevo mas tarde', 'error');
       });
   };
 
