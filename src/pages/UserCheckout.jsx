@@ -4,19 +4,26 @@ import Logo from '../assets/images/Logo.webp';
 import { calculateTotal } from '../helpers';
 import { CarritoContext } from '../context/CarritoContext';
 import OpcionDeEnvio from '../components/Checkout/OpcionDeEnvio';
-import { HandleUserSubmit } from '../hooks/Checkout/HandleUserSubmit';
 import { AuthContext } from '../context/AuthContext';
+import { HandleUserSubmit } from '../hooks/Checkout/HandleUserSubmit';
 
 const UserCheckout = () => {
   const { carrito, setCarrito } = useContext(CarritoContext);
-  const { user } = useContext(AuthContext)
+  const { user } = useContext(AuthContext);  
   const navigate = useNavigate();
   const [opcionEnvio, setOpcionEnvio] = useState('');
+
 
   const handleSubmit = (e) => {
     e.preventDefault();
     HandleUserSubmit(carrito, setCarrito, opcionEnvio, setOpcionEnvio, user);
   };
+
+
+
+
+
+
 
   const handleShippingOptionChange = (option) => {
     setOpcionEnvio(option);

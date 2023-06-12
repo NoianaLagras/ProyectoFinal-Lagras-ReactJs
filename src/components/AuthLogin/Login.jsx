@@ -19,7 +19,7 @@ const Login = () => {
         handleLogin({ email });
       })
       .catch((error) => {
-        console.log(error);
+        console.error('Error en el inicio de sesión:', error);
         Swal.fire('Error en el inicio de sesión', 'Inténtelo de nuevo más tarde', 'error');
       });
   };

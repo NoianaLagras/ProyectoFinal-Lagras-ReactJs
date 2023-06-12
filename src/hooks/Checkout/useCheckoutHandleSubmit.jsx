@@ -1,15 +1,18 @@
 import Swal from 'sweetalert2';
 import { addDoc, collection } from 'firebase/firestore';
 import { calculateTotal } from '../../helpers/index';
-import {  db } from '../../firebase.config';
+import {  db , auth } from '../../firebase.config';
 
 const CheckoutHandleSubmit = async (carrito, setCarrito, opcionEnvio, formValues, setFormValues, formulario, setOpcionEnvio) => {
+  const user = auth.currentUser;
+  const userId = user ? user.uid : null;
 
   const orderData = {
     items: carrito,
     opcionEnvio,
     formData: formValues,
     total: calculateTotal(carrito, opcionEnvio),
+    userId: userId,
   };
 
   if (formValues.email !== formValues.confirmEmail) {

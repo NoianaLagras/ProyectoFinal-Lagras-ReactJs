@@ -1,37 +1,34 @@
-
 import Swal from 'sweetalert2';
-import {  db } from '../../firebase.config';
+import { db , auth} from '../../firebase.config';
 import { addDoc, collection } from 'firebase/firestore';
 import { calculateTotal } from '../../helpers/index';
 
 export const HandleUserSubmit = async (carrito, setCarrito, opcionEnvio, setOpcionEnvio, user) => {
+  const currentUser = auth.currentUser;
+  const userId = currentUser ? currentUser.uid : null;
+  const formData = user && user.userData ? user.userData : {};
+
   const orderData = {
     items: carrito,
     opcionEnvio,
-    formData: {},
+    formData,
     total: calculateTotal(carrito, opcionEnvio),
+    userId,
   };
 
-  if (user && user.uid) {
-    orderData.userId = user.uid;
-    orderData.formData = user.userData; 
-  }
-
-  
   if (carrito.length === 0) {
     Swal.fire('Error', 'Por favor agregue un producto a su carrito', 'error');
   } else if (opcionEnvio === '') {
     Swal.fire('Error', 'Por favor seleccione el tipo de envío o retiro de su compra', 'error');
   } else {
     try {
-      const result = await Swal.fire({
+      await Swal.fire({
         icon: 'info',
         title: 'Estamos procesando su orden de compra',
         timer: 4000,
         timerProgressBar: true,
         showConfirmButton: false
       });
-      
 
       const col = collection(db, 'orders');
       const order = await addDoc(col, orderData);
