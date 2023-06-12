@@ -58,6 +58,7 @@ const handleCantidadChange = (productId, newCantidad) => {
 
 const value = {
   carrito,
+  setCarrito,
   addCarrito,
   removeCarrito,
   giveMeTotal,

@@ -11,6 +11,7 @@ import './App.css';
 
 import { ProductProvider } from './context/ProductContext';
 import { CarritoProvider } from './context/CarritoContext';
+import { AuthProvider } from './context/AuthContext';
 
 
 function App() {
@@ -18,7 +19,9 @@ function App() {
   <div className='App'>
       <ProductProvider>
         <CarritoProvider>
+          <AuthProvider>
         <Rutas />
+        </AuthProvider>
         </CarritoProvider>
       </ProductProvider>
       <ToastContainer />

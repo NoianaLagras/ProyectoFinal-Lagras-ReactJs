@@ -5,10 +5,13 @@ import { calculateTotal, handleInputChange } from '../helpers/index';
 import OpcionDeEnvio from '../components/Checkout/OpcionDeEnvio';
 import ComponenteFormulario from '../components/Formulario/ComponenteFormulario';
 import Logo from '../assets/images/Logo.webp';
-import CheckoutHandleSubmit from '../hooks/CheckoutForm';
-const Checkout = () => {
-  const { carrito } = useContext(CarritoContext);
+import CheckoutHandleSubmit from '../hooks/Checkout/useCheckoutHandleSubmit';
+import { AuthContext } from '../context/AuthContext';
+import UserCheckout from './UserCheckout';
 
+const Checkout = () => {
+  const { carrito, setCarrito } = useContext(CarritoContext);
+  const { isLoggedIn } = useContext(AuthContext);
   const [opcionEnvio, setOpcionEnvio] = useState('');
   const formulario = useRef();
   const navigate = useNavigate();
@@ -28,7 +31,7 @@ const Checkout = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    CheckoutHandleSubmit(carrito, opcionEnvio, formValues, setFormValues, formulario, setOpcionEnvio);
+    CheckoutHandleSubmit(carrito, setCarrito, opcionEnvio, formValues, setFormValues, formulario, setOpcionEnvio);
   };
 
   const subtotal = carrito.reduce((accumulator, item) => accumulator + item.price * item.cantidad, 0);
@@ -36,6 +39,11 @@ const Checkout = () => {
   const handleShippingOptionChange = (option) => {
     setOpcionEnvio(option);
   };
+
+  if (isLoggedIn) {
+    return <UserCheckout />;
+  }
+
   return (
     <Fragment>
       <div className="checkout-header">

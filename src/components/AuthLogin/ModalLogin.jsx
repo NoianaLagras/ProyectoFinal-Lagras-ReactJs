@@ -1,11 +1,13 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import Registro from './Registro';
 import Login from './Login';
+import { AuthContext } from '../../context/AuthContext';
 const Modal = () => {
   const [showModal, setShowModal] = useState(false);
   const [activeTab, setActiveTab] = useState('registro');
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const {isLoggedIn, setIsLoggedIn} = useContext(AuthContext);
   const [user, setUser] = useState(null);
+
 
   const toggleModal = () => {
     setShowModal(!showModal);
@@ -16,11 +18,6 @@ const Modal = () => {
     setIsLoggedIn(true);
     setUser(loggedInUser);
     toggleModal();
-  };
-
-  const handleLogout = () => {
-    setIsLoggedIn(false);
-    setUser(null);
   };
 
   return (

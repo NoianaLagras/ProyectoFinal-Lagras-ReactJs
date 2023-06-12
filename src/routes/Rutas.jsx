@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Error404 from '../pages/Error404';
 import ItemDetail from '../pages/ItemDetail';
 import Medidas from '../pages/Medidas';
@@ -8,11 +8,12 @@ import Contacto from '../pages/Contacto';
 import ItemListContainer from '../pages/ItemListContainer';
 import Checkout from '../pages/Checkout';
 import Orders from '../pages/Orders';
-
+import UserCheckout from '../pages/UserCheckout';
 
 const Rutas = () => {
+
   return (
-    <BrowserRouter>
+    <Router>
       <Routes>
         <Route path="/" element={<ItemListContainer />} />
         <Route path="/item/:id" element={<ItemDetail />} />
@@ -24,7 +25,7 @@ const Rutas = () => {
         <Route path="/checkout" element={<Checkout />} />
         <Route path="/orders" element={<Orders />} />
       </Routes>
-    </BrowserRouter>
+    </Router>
   );
 };
 

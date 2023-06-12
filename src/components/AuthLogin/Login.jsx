@@ -1,11 +1,12 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { signInWithEmailAndPassword } from 'firebase/auth';
 import { auth } from '../../firebase.config';
 import Swal from 'sweetalert2';
 import { Link } from 'react-router-dom';
-import Checkout from '../../pages/Checkout';
+import { AuthContext } from '../../context/AuthContext';
 
-const Login = ({  handleLogin, isLoggedIn, user }) => {
+const Login = () => {
+  const { handleLogin, isLoggedIn, user, handleLogout } = useContext(AuthContext);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
@@ -15,11 +16,16 @@ const Login = ({  handleLogin, isLoggedIn, user }) => {
     signInWithEmailAndPassword(auth, email, password)
       .then(() => {
         Swal.fire('Inicio de sesión exitoso', `Usuario: ${email}`, 'success');
-        handleLogin({ email });})
+        handleLogin({ email });
+      })
       .catch((error) => {
         console.log(error);
         Swal.fire('Error en el inicio de sesión', 'Inténtelo de nuevo más tarde', 'error');
       });
+  };
+
+  const handleLogoutClick = () => {
+    handleLogout();
   };
 
   if (isLoggedIn) {
@@ -27,16 +33,19 @@ const Login = ({  handleLogin, isLoggedIn, user }) => {
       <div>
         <h2 className="user">{`👤Usuario: ${user.email}`}</h2>
         <Link to="/orders">
-          <button type="button" className="btn btn-primary">
+          <button type="button" className="btn btn-danger mx-2">
             Mis pedidos
           </button>
         </Link>
+        <button type="button" className="btn btn-dark mx-2" onClick={handleLogoutClick}>
+          Cerrar sesión
+        </button>
       </div>
     );
   } else {
     return (
       <form onSubmit={handleLoginSubmit}>
-        <h2 className='login'>Login</h2>
+        <h2 className="login">Login</h2>
         <div className="mb-4">
           <label htmlFor="loginEmail" className="form-label">
             Correo electrónico
@@ -66,7 +75,6 @@ const Login = ({  handleLogin, isLoggedIn, user }) => {
         <button type="submit" className="btn btn-primary">
           Iniciar Sesión
         </button>
-        {isLoggedIn && <Checkout />}
       </form>
     );
   }

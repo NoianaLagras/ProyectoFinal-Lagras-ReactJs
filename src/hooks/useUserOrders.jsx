@@ -2,7 +2,6 @@ import { useEffect, useState } from 'react';
 import { onAuthStateChanged } from 'firebase/auth';
 import { collection, query, where, getDocs } from 'firebase/firestore';
 import { auth, db } from '../firebase.config';
-import Swal from 'sweetalert2';
 
 export const useUserOrders = () => {
   const [userLoggedIn, setuserLoggedIn] = useState(false);
